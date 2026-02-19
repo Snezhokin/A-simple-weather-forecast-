@@ -7,12 +7,12 @@ def weather_cheсk(city):
 
     }
 
-    response= requestes.get(
+    response= requests.get(
         f"https://www.google.com/search?q=погода+в+{city}", 
         headers=headers)
     print(response)
 
-    soup = BeatifulSoup(res.text, 'html.parser')
+    soup = BeatifulSoup(response.text, 'html.parser')
 
     temperature = soup.select("#wob_tm")[0].getText()
     title = soup.select("#wob_dc")[0].getText()
@@ -25,3 +25,8 @@ def weather_cheсk(city):
     print(f"Температура: {temperature}C")
     print(f"Влажность: {humidity}")
     print(f"Ветер: {wind}")
+
+
+if __name__ == "__name__":
+    city_input=input("Enter your city:")
+    weather_cheсk(f"{city_input} weater")
