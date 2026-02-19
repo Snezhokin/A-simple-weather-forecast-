@@ -19,3 +19,9 @@ def weather_cheсk(city):
     humidity = soup.select("#wob_hm")[0].getText()
     time = soup.select("#wob_dts")[0].getText()
     wind = soup.select("#wob_ws")[0].getText()
+
+    print(time)
+    print(title)
+    print(f"Температура: {temperature}C")
+    print(f"Влажность: {humidity}")
+    print(f"Ветер: {wind}")
